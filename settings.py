@@ -7,4 +7,5 @@ class Settings:
         self.screen_width = 1200
         self.screen_height = 800
         self.bg_colour = (100,100,100)
-        
+        # Cell settings
+        self.cell_colour = (250,250,250)
