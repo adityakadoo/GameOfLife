@@ -12,15 +12,18 @@ class Cell(Sprite):
         self.screen_rect = self.screen.get_rect()
         self.cell_width = gl_game.cell_width
         self.settings = gl_game.settings
-        self.colour = self.settings.cell_colour
+        self.colour = self.settings.bg_colour
 
         self.rect = pygame.Rect(0,0,self.cell_width,self.cell_width)
         self.rect.x = self.rect.width
         self.rect.y = self.rect.height
 
-        self.status = True
+        self.status = False
         self.x = float(self.rect.x)
         self.y = float(self.rect.y)
+
+    def get_status(self):
+        return self.status
     
     def update(self):
         """Update the status of a cell"""
@@ -35,4 +38,4 @@ class Cell(Sprite):
 
     def draw_cell(self):
         """Draw the cell on the screen"""
-        pygame.draw.rect(self.screen,self.colour,self.rect,1)
+        pygame.draw.rect(self.screen,self.colour,self.rect)
